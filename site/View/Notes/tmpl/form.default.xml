@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form type="browse" 
+	show_header="1" 
+		show_filters="1" 
+			show_pagination="1" 
+				norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+					lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/customF0F.css">
+					
+  <headerset>
+    <header name="type" type="Searchable" label="COM_GSCRM_NOTES_TITLE_LIST" sortable="true"/>	  
+    <header name="title" label="COM_GSCRM_NOTES_TITLE_LABEL"/>   	  
+    <header name="created_on" label="GS_CREATED_ON" sortable="true"/>
+    <header name="account" type="Searchable" label="COM_GSCRM_NOTES_ACCOUNT_LIST" sortable="true"/> 
+    <header name="enabled" type="Searchable" label="COM_GSCRM_NOTES_ENABLED_LABEL" sortable="true" tdwidth="1%"/>    
+    
+<!--     <header name="ordering" type="Ordering" label="COM_GSCRM_NOTES_ORDERING_LABEL" sortable="true" tdwidth="1%"/> -->
+<!--     <header name="gscrm_contact_id" type="RowSelect" label="COM_GSCRM_NOTES_GSCRM_CONTACT_ID_LABEL" sortable="true" tdwidth="2%"/> -->
+<!--     <header name="description" label="COM_GSCRM_NOTES_DESCRIPTION_LABEL" sortable="true"/> -->
+<!--     <header name="opportunity" label="COM_GSCRM_NOTES_OPPORTUNITY_LABEL" sortable="true"/> -->
+<!--     <header name="contract" label="COM_GSCRM_NOTES_CONTRACT_LABEL" sortable="true"/> -->
+<!--     <header name="order_id" label="COM_GSCRM_NOTES_ORDER_LABEL" sortable="true"/> -->
+<!--     <header name="code" type="Searchable" label="COM_GSCRM_NOTES_CODE_LABEL" sortable="true"/> -->    
+<!--     <header name="owner" type="Searchable" label="COM_GSCRM_NOTES_OWNER_LABEL" sortable="true"/> -->
+<!--     <header name="access" type="AccessLevel" label="COM_GSCRM_NOTES_ACCESS_LABEL" sortable="true"/> -->
+  </headerset>
+  
+  <fieldset name="items">
+
+    <field name="type" type="GenericList">
+				<option value="">GS_SELECT</option>	
+				<option value="1">GS_COLD_CALL</option>		
+				<option value="2">GS_FOLLOW_UP</option>
+				<option value="3">GS_INQUIRY_PRE_SALES</option>
+				<option value="4">GS_INQUIRY_SUPPORT</option>			
+				<option value="5">GS_INQUIRY_CONTRACT</option>		
+				<option value="6">GS_INQUIRY_ORDER</option>				
+				<option value="7">GS_INQUIRY_INVOICE</option>	
+				<option value="8">GS_INQUIRY_EVENTS</option>		
+				<option value="9">GS_RETURN_GOODS</option>
+				<option value="99">GS_LOG</option>
+    </field>   		
+    <field name="title" type="text" url="index.php?option=com_gscrm&amp;view=Note&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    	  
+    <field name="created_on" label="date" type="ViewTemplate" source="site:com_gscrm/Notes/Notes_datetime" />   
+
+    <field name="account" url="index.php?option=com_gscrm&amp;view=Account&amp;id=[ITEM:ACCOUNT]&amp;[TOKEN]=1"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+			>
+			<state key="code">[ITEM:CODE]</state>
+		</field>  
+
+    <field name="enabled" type="Actions" tooltip="false"/>	  
+
+<!--     <field name="ordering" type="Ordering" class="input-mini input-sm"/> -->
+<!--     <field name="gscrm_contact_id" type="SelectRow"/> -->
+<!--     <field name="content" type="text"/> -->
+<!--     <field name="opportunity" type="Numeric"/> -->
+<!--     <field name="contract" type="Numeric"/> -->
+<!--     <field name="order_id" type="Numeric"/> -->
+<!--     <field name="code" type="Numeric"/> -->    
+<!--     <field name="owner" type="Numeric"/> -->
+<!--     <field name="enabled" type="Actions"/> -->
+<!--     <field name="access" type="AccessLevel"/> -->
+  </fieldset>
+</form>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form validate="true">
+  <fieldset name="scaffolding" label="COM_GSCRM_CURRENCIES_GROUP_BASIC">
+	  
+    <field name="title" type="Text" label="COM_GSCRM_CURRENCIES_TITLE_LABEL" tooltip="COM_GSCRM_CURRENCIES_TITLE_DESC" required="true"/>
+    <field name="symbol" type="Text" label="COM_GSCRM_CURRENCIES_SYMBOL_LABEL" tooltip="COM_GSCRM_CURRENCIES_SYMBOL_DESC"/>
+    <field name="rate" type="Currency" default="1" label="COM_GSCRM_CURRENCIES_RATE_LABEL" tooltip="COM_GSCRM_CURRENCIES_RATE_DESC"/>
+    <field name="code" label="COM_GSCRM_CURRENCIES_CODE_LABEL" tooltip="COM_GSCRM_CURRENCIES_CODE_DESC" required="true"
+	   		type="Model"
+		    model="Codes"
+		    key_field="gscrm_code_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		</field> 
+    <field name="enabled" type="Published" label="COM_GSCRM_CURRENCIES_ENABLED_LABEL" tooltip="COM_GSCRM_CURRENCIES_ENABLED_DESC"/>
+    <field name="access" type="AccessLevel" label="COM_GSCRM_CURRENCIES_ACCESS_LABEL" tooltip="COM_GSCRM_CURRENCIES_ACCESS_DESC"/>
+  </fieldset>
+</form>

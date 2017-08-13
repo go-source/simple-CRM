@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form type="browse" show_header="1" show_filters="1" show_pagination="1" norows_placeholder="COM_GSCRM_COMMON_NORECORDS">
+  <headerset>
+<!--     <header name="ordering" type="Ordering" label="COM_GSCRM_CODES_ORDERING_LABEL" sortable="true" tdwidth="1%"/> -->
+    <header name="gscrm_code_id" type="RowSelect" label="COM_GSCRM_CODES_GSCRM_CODE_ID_LABEL" sortable="true" tdwidth="20"/>
+    <header name="title" type="Searchable" label="COM_GSCRM_CODES_TITLE_LABEL"/>
+    <header name="type" type="Text" label="COM_GSCRM_CODES_TYPE_LABEL" sortable="true"/>
+    <header name="timezone" type="Text" label="timezone" sortable="true"/>
+    <header name="pref_addr" type="Text" label="GS_PREFADDR" sortable="true"/>          
+    <header name="user_id" type="Searchable" label="COM_GSCRM_CODES_USER_ID_LABEL" sortable="true"/>
+    <header name="enabled" type="Published" label="COM_GSCRM_CODES_ENABLED_LABEL" sortable="true"/>
+    <header name="access" type="AccessLevel" label="COM_GSCRM_CODES_ACCESS_LABEL" sortable="true"/>
+  </headerset>
+  
+  <fieldset name="items">
+<!--     <field name="ordering" type="Ordering" class="input-mini input-sm"/> -->
+    <field name="gscrm_code_id" type="SelectRow"/>
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Code&amp;id=[ITEM:ID]&amp;[TOKEN]=1"/>
+
+    <field name="type" type="GenericList"> 
+	<option value="0">GS_FREE</option>
+	<option value="1">GS_PAID</option>
+	</field> 
+	    
+    <field name="timezone" type="Timezonne"/>
+    
+    <field name="pref_addr" type="GenericList" label="GS_PREFADDR" >
+	<option value="0">GS_NUMBER_FIRST</option>
+	<option value="1">GS_STREET_FIRST</option>
+	</field>
+   
+    <field name="user_id" type="User"
+    					show_email="false"
+    					show_id="false"
+    					show_username="false"
+    					avatar_size="30"
+    					/>
+    <field name="enabled" type="Actions"/>
+    <field name="access" type="AccessLevel"/>
+  </fieldset>
+</form>

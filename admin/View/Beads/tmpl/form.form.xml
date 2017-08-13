@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	validate="true"
+		lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/adminF0F.css"
+			>
+  <fieldset name="scaffolding" label="COM_GSCRM_BEADS_GROUP_BASIC" class="table45" >
+    <field name="user_id" type="User" label="COM_GSCRM_BEADS_USER_ID_LABEL" tooltip="COM_GSCRM_BEADS_USER_ID_LABEL" required="true" />
+
+    <field name="copy_data" type="radio" class="btn-group btn-group-yesno"
+		    label="COM_GSCRM_BEADS_COPY_LABEL" tooltip="COM_GSCRM_BEADS_COPY_TIP" >
+			<option value="1">GS_YES</option>
+			<option value="0">GS_NO</option>
+		</field>
+    
+      
+    <field name="user_name" type="Text" label="COM_GSCRM_BEADS_TITLE_LABEL" tooltip="COM_GSCRM_BEADS_TITLE_DESC"/>
+    <field name="quota" type="Currency" label="COM_GSCRM_BEADS_QUOTA_LABEL" tooltip="COM_GSCRM_BEADS_QUOTA_DESC"/>
+
+    <field name="currency" label="COM_GSCRM_BEADS_CURRENCY_LABEL" tooltip="COM_GSCRM_BEADS_CURRENCY_DESC"
+	   		type="Model"
+		    model="Currencies"
+		    key_field="gscrm_currency_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:code]</state>
+    </field>   
+    
+</fieldset>     
+<fieldset name="column_2" label="GS_ADD_INFO" class="table45" >
+
+    <field name="code" label="COM_GSCRM_BEADS_CODE_LABEL" tooltip="COM_GSCRM_BEADS_CODE_DESC" required="true"
+	   		type="Model"
+		    model="Codes"
+		    key_field="gscrm_code_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		</field>   	
+
+    <field name="role" label="COM_GSCRM_BEADS_ROLE_LABEL" tooltip="COM_GSCRM_BEADS_ROLE_DESC"
+	   		type="Model"
+		    model="Roles"
+		    key_field="gscrm_role_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:code]</state>
+    </field>
+    <field name="sdate" type="Calendar" label="COM_GSCRM_BEADS_SDATE_LABEL" tooltip="COM_GSCRM_BEADS_SDATE_DESC"/>
+    <field name="edate" type="Calendar" label="COM_GSCRM_BEADS_EDATE_LABEL" tooltip="COM_GSCRM_BEADS_EDATE_DESC"/>    				 
+    <field name="enabled" type="Published" label="COM_GSCRM_BEADS_ENABLED_LABEL" tooltip="COM_GSCRM_BEADS_ENABLED_DESC"/>
+    <field name="access" type="AccessLevel" label="COM_GSCRM_BEADS_ACCESS_LABEL" tooltip="COM_GSCRM_BEADS_ACCESS_DESC"/>
+  </fieldset>
+</form>

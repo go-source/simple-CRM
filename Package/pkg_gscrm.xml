@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="package" method="upgrade">
+    
+    <name>Simple CRM</name>
+    <author>Pedro L B Maschio</author>
+    <creationDate>2017-07-28</creationDate>
+    <packagename>gscrm</packagename>
+    <version>1.1.0</version>
+    <url>https://go-sorce.com</url>
+    <packager>go-source</packager>
+    <packagerurl>https://go-sorce.co</packagerurl>
+    <copyright>Copyright (c)2017 Pedro L B Maschio</copyright>
+    <license>GNU GPL v3 or later</license>
+    <description>Simple CRM installation package</description>
+    
+    <files>
+        <file type="component" id="com_gscrm">com_gscrm.zip</file>
+        
+<!--         <file type="library" id="lib_fof30">lib_fof30.zip</file> -->
+    </files>
+
+    <!-- Installation script -->
+	<scriptfile>script.gscrm.php</scriptfile>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="Simple CRM">
+	        http://go-source.com/crmpackageupdate.xml
+	    </server>
+    </updateservers>
+
+</extension>
+

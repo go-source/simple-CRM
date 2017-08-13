@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	type="browse" 
+		show_header="1" 
+			show_filters="1" 
+				show_pagination="1" 
+					norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+						lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/customF0F.css">
+  <headerset>
+    <header name="stage" type="Searchable" label="COM_GSCRM_OPPORTUNITIES_STAGE_LABEL" sortable="true"/>
+    <header name="account" type="Searchable" label="COM_GSCRM_OPPORTUNITIES_ACCOUNT_LABEL" sortable="true"/>     
+    <header name="title" label="COM_GSCRM_OPPORTUNITIES_LIST_TITLE"/>
+    <header name="value" label="COM_GSCRM_OPPORTUNITIES_VALUE_LABEL" sortable="true"/>
+    <header name="owner" label="COM_GSCRM_OPPORTUNITIES_OWNER_LABEL" sortable="true"/>
+    <header name="enabled" type="Searchable" label="COM_GSCRM_OPPORTUNITIES_ENABLED_LABEL" sortable="true"/>
+<!--     <header name="note" label="COM_GSCRM_OPPORTUNITIES_CONTACT_LABEL" sortable="true"/> -->    
+<!--     <header name="ordering" type="Ordering" label="COM_GSCRM_OPPORTUNITIES_ORDERING_LABEL" sortable="true" tdwidth="1%"/> -->
+<!--     <header name="gscrm_opportunity_id" type="RowSelect" label="COM_GSCRM_OPPORTUNITIES_GSCRM_OPPORTUNITY_ID_LABEL" sortable="true" tdwidth="20"/>   -->  
+<!--     <header name="notes" type="Searchable" label="COM_GSCRM_OPPORTUNITIES_NOTES_LABEL" sortable="true"/> -->
+<!--     <header name="access" type="AccessLevel" label="COM_GSCRM_OPPORTUNITIES_ACCESS_LABEL" sortable="true"/>   -->  
+<!--     <header name="code" type="Searchable" label="COM_GSCRM_OPPORTUNITIES_CODE_LABEL" sortable="true"/> -->
+            
+  </headerset>
+  <fieldset name="items">
+    <field name="stage"
+				type="GenericList">
+				<option value="">GS_NOT_SET</option>	
+				<option value="1">GS_SHOW_INTEREST</option>		
+				<option value="2">GS_QUALIFICATION</option>
+				<option value="3">GS_PROPOSAL</option>
+				<option value="4">GS_NEGOTIATION</option>			
+				<option value="5">GS_WON</option>		
+				<option value="6">GS_LOST</option>				
+    </field>
+    <field name="account" url="index.php?option=com_gscrm&amp;view=Account&amp;id=[ITEM:ACCOUNT]&amp;Itemid=[ITEMID]&amp;nt_show=1&amp;[TOKEN]=1"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+			>
+		    <state key="code">[ITEM:CODE]</state>								
+		</field>  
+	  
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Opportunity&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;nt_show=1&amp;[TOKEN]=1"/>
+
+    <field name="value" type="Numeric"/>
+
+    <field name="owner" 
+	   		type="Model"
+		    model="Beads"
+		    key_field="gscrm_bead_id"
+		    value_field="user_name"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_NOT_AVAILABLE"
+			>
+		    <state key="code">[ITEM:CODE]</state>				
+		</field> 
+
+    <field name="enabled" type="Actions"/>
+
+<!--     <field name="note" type="text"/> -->    
+<!--     <field name="ordering" type="Ordering" class="input-mini input-sm"/> -->
+<!--     <field name="gscrm_opportunity_id" type="SelectRow"/> -->    
+<!--     <field name="notes" type="Text"/>    --> 
+<!--     <field name="code" type="Numeric"/>  --> 
+<!--     <header name="code" type="Searchable" label="COM_GSCRM_OPPORTUNITIES_CODE_LABEL" sortable="true"/> -->
+  
+  </fieldset>
+</form>

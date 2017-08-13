@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	type="browse" 
+		show_header="1" 
+			show_filters="1" 
+				show_pagination="1" 
+					norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+						lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/customF0F.css">
+  <headerset>
+   
+    <header name="title" label="COM_GSCRM_ORDERS_TITLE_LABEL"/>
+    <header name="created_on" label="GS_CREATED_ON" sortable="true"/>    
+    <header name="service" type="Searchable" label="COM_GSCRM_ORDERS_SERVICE_LABEL" sortable="true" />
+    <header name="currency" label="COM_GSCRM_CONTRACTS_CURRENCY_LIST" sortable="true" width="2%"/>    
+    <header name="value" label="COM_GSCRM_ORDERS_VALUE_LABEL" sortable="true"/>
+    <header name="opportunity" label="COM_GSCRM_ORDERS_OPPORTUNITY_LABEL" sortable="true"/>
+    <header name="account" type="Searchable" label="COM_GSCRM_ORDERS_ACCOUNT_LABEL" sortable="true"/>
+    <header name="company" label="COM_GSCRM_ORDERS_COMPANY_LABEL" sortable="true"/>
+    <header name="enabled" type="Searchable" label="COM_GSCRM_ORDERS_ENABLED_LABEL" sortable="true"/>
+
+<!--     <header name="contract" label="COM_GSCRM_ORDERS_CONTRACT_LABEL" sortable="true"/> -->
+<!--     <header name="owner" type="Searchable" label="COM_GSCRM_ORDERS_OWNER_LABEL" sortable="true"/> -->
+<!--     <header name="ordering" type="Ordering" label="COM_GSCRM_ORDERS_ORDERING_LABEL" sortable="true" tdwidth="1%"/> -->
+<!--     <header name="gscrm_order_id" type="RowSelect" label="COM_GSCRM_ORDERS_GSCRM_ORDER_ID_LABEL" sortable="true" tdwidth="20"/> -->
+<!--     <header name="notes" type="Searchable" label="COM_GSCRM_ORDERS_NOTES_LABEL" sortable="true"/> -->
+<!--     <header name="type" type="Field" label="COM_GSCRM_ORDERS_TYPE_LABEL" sortable="true"/> -->
+<!--     <header name="note" label="COM_GSCRM_ORDERS_NOTE_LABEL" sortable="true"/> -->
+<!--     <header name="code" type="Searchable" label="COM_GSCRM_ORDERS_CODE_LABEL" sortable="true"/> -->
+<!--     <header name="access" type="AccessLevel" label="COM_GSCRM_ORDERS_ACCESS_LABEL" sortable="true"/> -->
+  
+  </headerset>
+  <fieldset name="items">
+  	
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Order&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    <field name="created_on" label="date" type="ViewTemplate" source="site:com_gscrm/Notes/Notes_datetime" />    
+    <field name="service"
+    		type="GenericList"> 
+			<option value="1">COM_GSCRM_ORDERS_ST1</option>
+			<option value="2">COM_GSCRM_ORDERS_ST2</option>
+			<option value="3">COM_GSCRM_ORDERS_ST3</option>
+			<option value="4">COM_GSCRM_ORDERS_ST4</option>
+			<option value="5">COM_GSCRM_ORDERS_ST5</option>
+			<option value="6">COM_GSCRM_ORDERS_ST6</option>
+		</field> 
+    <field name="currency" 
+	   		type="Model"
+		    model="Currencies"
+		    key_field="gscrm_currency_id"
+		    value_field="symbol"
+			>
+			<state key="code">[ITEM:CODE]</state>
+		</field>    
+    <field name="value" type="Currency" />
+
+    <field name="opportunity" 
+	   		type="Model"
+		    model="opportunities"
+		    key_field="gscrm_opportunity_id"
+		    value_field="title"
+			>
+			<state key="code">[ITEM:CODE]</state>
+		</field> 
+    <field name="account" url="index.php?option=com_gscrm&amp;view=Account&amp;id=[ITEM:ACCOUNT]&amp;[TOKEN]=1"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+			>
+		</field> 
+
+    <field name="company" url="index.php?option=com_gscrm&amp;view=Account&amp;id=[ITEM:ACCOUNT]&amp;[TOKEN]=1"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+			>
+		</field> 
+				
+    <field name="enabled" type="Actions"/>
+
+<!--
+    <field name="contract" 
+	   		type="Model"
+		    model="Contracts"
+		    key_field="gscrm_contract_id"
+		    value_field="title"
+			>
+			<state key="code">[ITEM:CODE]</state>
+		</field> 
+-->
+<!--     <field name="owner" type="Numeric"/> -->
+<!--     <field name="ordering" type="Ordering" class="input-mini input-sm"/> -->
+<!--     <field name="gscrm_order_id" type="SelectRow"/> -->
+<!--     <field name="notes" type="Text"/> -->
+<!--     <field name="type" type="Checkbox"/> -->
+<!--     <field name="note" type="Numeric"/> -->
+<!--     <field name="code" type="Numeric"/> -->
+<!--     <field name="access" type="AccessLevel"/> -->
+  </fieldset>
+</form>

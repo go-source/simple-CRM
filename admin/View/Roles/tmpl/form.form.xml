@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	validate="true"
+		lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/adminF0F.css"
+			>
+  <fieldset name="scaffolding" label="COM_GSCRM_ROLES_GROUP_BASIC">
+	  
+    <field name="title" type="Text" label="COM_GSCRM_ROLES_TITLE_LABEL" description="COM_GSCRM_ROLES_TITLE_DESC"/>
+	
+	<field name="parent" label="COM_GSCRM_ROLES_PARENT_LABEL" description="COM_GSCRM_ROLES_PARENT_DESC" 
+			type="ViewTemplate" source="admin:com_gscrm/Roles/Select_parent" />     
+    
+    
+    <field name="child" label="COM_GSCRM_ROLES_CHILD_LABEL" description="COM_GSCRM_ROLES_CHILD_DESC"
+    		type="ViewTemplate" source="admin:com_gscrm/Roles/Select_child" />
+   
+    <field name="code" label="COM_GSCRM_CURRENCIES_CODE_LABEL" description="COM_GSCRM_CURRENCIES_CODE_DESC" required="true"
+	   		type="Model"
+		    model="Codes"
+		    key_field="gscrm_code_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		</field> 
+    <field name="enabled" type="Published" label="COM_GSCRM_ROLES_ENABLED_LABEL" description="COM_GSCRM_ROLES_ENABLED_DESC"/>
+    <field name="access" type="AccessLevel" label="COM_GSCRM_ROLES_ACCESS_LABEL" description="COM_GSCRM_ROLES_ACCESS_DESC"/>
+  </fieldset>
+</form>

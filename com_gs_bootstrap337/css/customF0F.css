@@ -1,0 +1,40 @@
+/*!
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	
+* Complementary CSS for F0F3 forms by go-source.com
+*
+* If we load Bootstrapp with F0F, buttons and input fields get altered
+*
+* This file adds just a few css used under form.default.xml
+*
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+/* set unpublish flag to red color */
+.icon-unpublish{
+	color: red !important;
+}
+
+/*hide ordeging dropdown from header without changing F0F code */
+.chzn-container-single .chzn-single {
+	position: absolute !important;
+	display: none !important;
+}
+
+ .table45{
+	display:table;         
+	width:45%;
+	float:left;	 
+ }
+ 
+ .mt3{
+	 margin-top: 3%;
+ }
+ 
+ .w80{
+	 width: 80%;
+ }
+
+.filter-search {
+    margin-right: -5px;
+    max-width: 200px;
+}

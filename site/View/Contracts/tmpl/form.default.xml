@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	type="browse" 
+		show_header="1" 
+			show_filters="1" 
+				show_pagination="1" 
+					norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+						lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/customF0F.css">
+  <headerset>
+
+    <header name="number" label="COM_GSCRM_CONTRACTS_NUMBER" sortable="true"/>
+    <header name="type" label="COM_GSCRM_CONTRACTS_TYPE" sortable="true"/>    
+    <header name="title" type="Searchable" label="COM_GSCRM_CONTRACTS_TITLE_LIST" sortable="true"/> 
+    <header name="currency" label="COM_GSCRM_CONTRACTS_CURRENCY_LIST" sortable="true" width="2%"/>       
+    <header name="cv" label="COM_GSCRM_CONTRACTS_CV_LIST" sortable="true"/>
+    <header name="sdate" type="Calendar" label="COM_GSCRM_CONTRACTS_SDATE_LABEL" sortable="true"/>
+    <header name="edate" type="Calendar" label="COM_GSCRM_CONTRACTS_EDATE_LABEL" sortable="true"/>    
+    <header name="account" type="Searchable" label="COM_GSCRM_CONTRACTS_ACCOUNT_LABEL" sortable="true"/>
+    <header name="enabled" type="Searchable" label="COM_GSCRM_CONTRACTS_ENABLED_LIST" sortable="true"/>
+
+<!--     <header name="ordering" type="Ordering" label="COM_GSCRM_CONTRACTS_ORDERING_LABEL" sortable="true" tdwidth="1%"/> -->
+<!--     <header name="gscrm_contract_id" type="RowSelect" label="COM_GSCRM_CONTRACTS_GSCRM_CONTRACT_ID_LABEL" sortable="true" tdwidth="20"/> -->    
+<!--     <header name="notes" type="Searchable" label="COM_GSCRM_CONTRACTS_NOTES_LABEL" sortable="true"/> -->    
+<!--     <header name="owner" type="Searchable" label="COM_GSCRM_CONTRACTS_OWNER_LABEL" sortable="true"/> -->
+<!--     <header name="invoice" type="Searchable" label="COM_GSCRM_CONTRACTS_INVOICE_LABEL" sortable="true"/> -->
+<!--     <header name="code" type="Searchable" label="COM_GSCRM_CONTRACTS_CODE_LABEL" sortable="true"/> -->
+<!--     <header name="access" type="AccessLevel" label="COM_GSCRM_CONTRACTS_ACCESS_LABEL" sortable="true"/> -->
+  </headerset>
+  
+  <fieldset name="items">
+
+    <field name="number" type="Text"/>
+ 
+    <field name="type" type="Radio" >
+			<option value="2">GS_PE</option>
+			<option value="1">GS_BZ</option>
+		</field>
+       
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Contract&amp;id=[ITEM:ID]&amp;nt_show=1&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    <field name="currency" 
+	   		type="Model"
+		    model="Currencies"
+		    key_field="gscrm_currency_id"
+		    value_field="symbol"
+			>
+			<state key="code">[ITEM:CODE]</state>
+		</field> 
+		
+    <field name="cv" type="Currency"/>
+
+    <field name="sdate" type="date" />
+    <field name="edate" type="date" />
+
+    <field name="account" url="index.php?option=com_gscrm&amp;view=Account&amp;id=[ITEM:ACCOUNT]&amp;[TOKEN]=1"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+			>
+			<state key="code">[ITEM:CODE]</state>
+		</field> 
+
+    <field name="enabled" type="Actions"/>
+        
+<!--     <field name="ordering" type="Ordering" class="input-mini input-sm"/> -->
+<!--     <field name="gscrm_contract_id" type="SelectRow"/> -->  
+<!--     <field name="notes" type="Text"/> -->
+<!--     <field name="owner" type="Numeric"/> -->
+<!--     <field name="invoice" type="Numeric"/> -->
+<!--     <field name="code" type="Numeric"/> --> 
+<!--     <field name="access" type="AccessLevel"/> -->    
+  </fieldset>
+</form>

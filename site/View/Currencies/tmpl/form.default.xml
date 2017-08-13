@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form type="browse" show_header="1" show_filters="1" show_pagination="1" norows_placeholder="COM_GSCRM_COMMON_NORECORDS">
+  <headerset>
+    <header name="ordering" type="Ordering" label="COM_GSCRM_CURRENCIES_ORDERING_LABEL" sortable="true" tdwidth="1%"/>
+    <header name="gscrm_currency_id" type="RowSelect" label="COM_GSCRM_CURRENCIES_GSCRM_CURRENCY_ID_LABEL" sortable="true" tdwidth="20"/>
+    <header name="title" type="Searchable" label="COM_GSCRM_CURRENCIES_TITLE_LABEL"/>
+    <header name="symbol" type="Searchable" label="COM_GSCRM_CURRENCIES_SYMBOL_LABEL" sortable="true"/>
+    <header name="rate" type="Searchable" label="COM_GSCRM_CURRENCIES_RATE_LABEL" sortable="true"/>
+    <header name="code" type="Searchable" label="COM_GSCRM_CURRENCIES_CODE_LABEL" sortable="true"/>
+    <header name="enabled" type="Published" label="COM_GSCRM_CURRENCIES_ENABLED_LABEL" sortable="true"/>
+    <header name="access" type="AccessLevel" label="COM_GSCRM_CURRENCIES_ACCESS_LABEL" sortable="true"/>
+  </headerset>
+  <fieldset name="items">
+    <field name="ordering" type="Ordering" class="input-mini input-sm"/>
+    <field name="gscrm_currency_id" type="SelectRow"/>
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Currency&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    <field name="symbol" type="Text"/>
+    <field name="rate" type="Numeric"/>
+    <field name="code" type="Numeric"/>
+    <field name="enabled" type="Actions"/>
+    <field name="access" type="AccessLevel"/>
+  </fieldset>
+</form>

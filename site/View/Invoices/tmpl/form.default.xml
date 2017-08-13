@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form type="browse" show_header="1" show_filters="1" show_pagination="1" norows_placeholder="COM_GSCRM_COMMON_NORECORDS">
+  <headerset>
+    <header name="ordering" type="Ordering" label="COM_GSCRM_INVOICES_ORDERING_LABEL" sortable="true" tdwidth="1%"/>
+    <header name="gscrm_invoice_id" type="RowSelect" label="COM_GSCRM_INVOICES_GSCRM_INVOICE_ID_LABEL" sortable="true" tdwidth="20"/>
+    <header name="title" type="Searchable" label="COM_GSCRM_INVOICES_TITLE_LABEL"/>
+    <header name="notes" type="Searchable" label="COM_GSCRM_INVOICES_NOTES_LABEL" sortable="true"/>
+    <header name="stage" type="Field" label="COM_GSCRM_INVOICES_STAGE_LABEL" sortable="true"/>
+    <header name="value" type="Searchable" label="COM_GSCRM_INVOICES_VALUE_LABEL" sortable="true"/>
+    <header name="owner" type="Searchable" label="COM_GSCRM_INVOICES_OWNER_LABEL" sortable="true"/>
+    <header name="account" type="Searchable" label="COM_GSCRM_INVOICES_ACCOUNT_LABEL" sortable="true"/>
+    <header name="contact" type="Searchable" label="COM_GSCRM_INVOICES_CONTACT_LABEL" sortable="true"/>
+    <header name="code" type="Searchable" label="COM_GSCRM_INVOICES_CODE_LABEL" sortable="true"/>
+    <header name="enabled" type="Published" label="COM_GSCRM_INVOICES_ENABLED_LABEL" sortable="true"/>
+    <header name="access" type="AccessLevel" label="COM_GSCRM_INVOICES_ACCESS_LABEL" sortable="true"/>
+  </headerset>
+  <fieldset name="items">
+    <field name="ordering" type="Ordering" class="input-mini input-sm"/>
+    <field name="gscrm_invoice_id" type="SelectRow"/>
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Invoice&amp;id=[ITEM:ID]&amp;nt_show=1&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    <field name="notes" type="Text"/>
+    <field name="stage" type="Checkbox"/>
+    <field name="value" type="Numeric"/>
+    <field name="owner" type="Numeric"/>
+    <field name="account" type="Text" url="index.php?option=com_gscrm&amp;view=Account&amp;id=[ITEM:ACCOUNT]&amp;[TOKEN]=1"/>
+    <field name="contact" type="Numeric"/>
+    <field name="code" type="Numeric"/>
+    <field name="enabled" type="Actions"/>
+    <field name="access" type="AccessLevel"/>
+  </fieldset>
+</form>

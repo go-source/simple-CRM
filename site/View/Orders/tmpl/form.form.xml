@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	validate="true"
+				lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/bootstrap.css"
+					>
+  <!-- 	optional: name label="GS_NAV"  instead of emptylabel -->
+	<fieldset name="navigation" emptylabel="1" class="col-md-12" >
+	  <field name="navigation" type="ViewTemplate" emptylabel="1"	source="site:com_gscrm/Orders/Nav_orders" />
+  	</fieldset>						
+
+<!--  Not used - inserts a left div with notes history, like in opportunity form
+	
+  	<fieldset name="fieldset3" class="col-md-6" label="COM_GSCRM_ORDERS_FIELDSET3" >	      			
+    
+    	<field name="new_note" type="Text" class=" col-md-12 high28" labelclass="label_left" label_placement="top"
+    		empty_replacement="GS_NEW_NOTE" label="GS_NEW_NOTE" tooltip="GS_TIP_PLUS_NOTE_OPP" />
+		
+		<field name="interaction" class="high28" type="ViewTemplate" emptylabel="1" tooltip="COM_GSCRM_NOTES_INTERACTION_DESC"
+    		source="site:com_gscrm/Orders/Notes_orders" />
+  	</fieldset>
+-->
+  
+  	<fieldset name="information" class="col-md-6" label="COM_GSCRM_ORDERS_GROUP_BASIC">
+	  
+    <field name="title" type="Text" class="col-md-12 high28" labelclass="pr0" required="true"
+    			label="COM_GSCRM_ORDERS_TITLE_LABEL" tooltip="COM_GSCRM_ORDERS_TITLE_DESC"/>
+    
+    <field name="notes" type="Textarea" class="col-md-12" labelclass="pr0" label="COM_GSCRM_ORDERS_NOTES_LABEL" tooltip="COM_GSCRM_ORDERS_NOTES_DESC"/> 
+
+    <field name="currency" class="col-md-6 high28" labelclass="pr0"
+    		label="COM_GSCRM_ORDERS_CURRENCY_LABEL" tooltip="COM_GSCRM_ORDERS_CURRENCY_DESC"
+		    type="ViewTemplate" source="site:com_gscrm/Currencies/Currency_select" />    		    	    			
+
+	<field name="value" type="Text" class="col-md-6 high28" labelclass="pr0" label="COM_GSCRM_ORDERS_VALUE_LABEL" tooltip="COM_GSCRM_ORDERS_VALUE_DESC"/>
+	   
+	<field name="account" class="high28" required="true"
+			label="COM_GSCRM_ORDERS_ACCOUNT_LABEL" tooltip="COM_GSCRM_ORDERS_ACCOUNT_DESC"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:CODE]</state>
+		    <state key="type">2</state>
+		</field>  
+		
+	<field name="company" class="high28"
+		label="COM_GSCRM_OPPORTUNITIES_COMPANY_LABEL" tooltip="COM_GSCRM_OPPORTUNITIES_COMPANY_DESC"
+	   		type="sql"
+	   		readonly="true"
+	   		query="SELECT gscrm_account_id AS value, title AS company FROM #__gscrm_accounts"
+			>
+			<option value="0">GS_NOT_SET</option>
+	</field>	     
+      			
+    <field name="type" type="radio" class="btn-group btn-group-yesno" required="true"
+		    label="COM_GSCRM_ORDERS_TYPE_LABEL" tooltip="COM_GSCRM_ORDERS_TYPE_DESC" >
+			<option value="2">GS_PE</option>
+			<option value="1">GS_BZ</option>
+		</field>  
+     			
+
+<!-- 	<field type="checkbox" name="editor" label="Editor" data-toggle="modal" data-target=".bs-editor-modal" />  future use, launch editor for contract description-->
+  	</fieldset>
+  
+  	<fieldset name="status" class="col-md-6" label="COM_GSCRM_ORDERS_STATUS">
+
+    <field name="enabled" type="radio" class="btn-group btn-group-yesno" disabled="true"
+		    label="COM_GSCRM_ORDERS_ENABLED_LABEL" tooltip="COM_GSCRM_ORDERS_ENABLED_DESC" >
+			<option value="1">COM_GSCRM_ORDERS_ENABLED_YES</option>
+			<option value="0">COM_GSCRM_ORDERS_ENABLED_NO</option>
+		</field>  
+		          			          
+    <field name="service" class="col-md-12" labelclass="pr0" label="COM_GSCRM_ORDERS_SERVICE_LABEL" tooltip="COM_GSCRM_ORDERS_SERVICE_DESC"
+    		type="GenericList"> 
+			<option value="1">COM_GSCRM_ORDERS_ST1</option>
+			<option value="2">COM_GSCRM_ORDERS_ST2</option>
+			<option value="3">COM_GSCRM_ORDERS_ST3</option>
+			<option value="4">COM_GSCRM_ORDERS_ST4</option>
+			<option value="5">COM_GSCRM_ORDERS_ST5</option>
+			<option value="6">COM_GSCRM_ORDERS_ST6</option>
+		</field>  
+		   
+    <field name="owner" class="high28"
+	    	label="COM_GSCRM_ORDERS_OWNER_LABEL" tooltip="COM_GSCRM_ORDERS_OWNER_DESC"
+	   		type="Model"
+		    model="Beads"
+		    key_field="gscrm_bead_id"
+		    value_field="user_name"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:CODE]</state>				
+		</field> 		
+		
+    <field name="contract" class="high28" label="COM_GSCRM_ORDERS_CONTRACT_LABEL" tooltip="COM_GSCRM_ORDERS_CONTRACT_DESC"
+	   		type="Model"
+		    model="Contracts"
+		    key_field="gscrm_contract_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:CODE]</state>			
+		</field> 
+    <field name="opportunity" class="high28" label="COM_GSCRM_ORDERS_OPPORTUNITY_LABEL" tooltip="COM_GSCRM_ORDERS_OPPORTUNITY_DESC"
+	   		type="Model"
+		    model="Opportunities"
+		    key_field="gscrm_opportunity_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:CODE]</state>		    				
+		</field> 
+
+    <field name="code" type="Text" readonly="false" class="high28" label="COM_GSCRM_ORDERS_CODE_LABEL" tooltip="COM_GSCRM_ORDERS_CODE_DESC"/>
+
+    <field name="note" type="hidden" emptylabel="1" />
+<!--     <field name="access" type="AccessLevel" label="COM_GSCRM_ORDERS_ACCESS_LABEL" tooltip="COM_GSCRM_ORDERS_ACCESS_DESC"/> -->
+   	</fieldset>
+  
+  	<fieldset name="invoide_data" class="col-md-6 gs_border" label="COM_GSCRM_ORDERS_INVOICE">  
+	  	<field name="invoide_data" type="ViewTemplate" emptylabel="1"	source="site:com_gscrm/Orders/Invoice_preview" /> 
+  </fieldset>
+  
+</form>
+
+<!--
+labels available but not used:
+
+label="COM_GSCRM_ORDERS_CODE_LABEL" tooltip="COM_GSCRM_ORDERS_CODE_DESC"
+label="COM_GSCRM_ORDERS_NOTE_LABEL" tooltip="COM_GSCRM_ORDERS_NOTE_DESC"
+-->

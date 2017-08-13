@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	validate="true"
+				lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/bootstrap.css"
+					>
+
+  <!-- 	optional: name label="GS_NAV"  instead of emptylabel -->
+	<fieldset name="navigation" emptylabel="1" class="col-md-12" >
+	  <field name="navigation" type="ViewTemplate" emptylabel="1"	source="site:com_gscrm/Campaigns/Nav_campaign" />
+  	</fieldset>	
+
+  <fieldset name="information" class="col-md-6" label="COM_GSCRM_CAMPAIGNS_GROUP_BASIC">
+	  
+    <field name="title" type="Text" class="col-md-12 high28" labelclass="pr0" required="true"
+    label="COM_GSCRM_CAMPAIGNS_TITLE_LABEL" tooltip="COM_GSCRM_CAMPAIGNS_TITLE_DESC"/>
+    
+    <field name="target" type="Text" class="col-md-12 high28" labelclass="pr0"
+    label="COM_GSCRM_CAMPAIGNS_TARGET_LABEL" tooltip="COM_GSCRM_CAMPAIGNS_TARGET_DESC"/> 
+    
+    <field name="currency" class="col-md-6 high28" labelclass="pr0"
+    		label="COM_GSCRM_ORDERS_CURRENCY_LABEL" tooltip="COM_GSCRM_ORDERS_CURRENCY_DESC"
+		    type="ViewTemplate" source="site:com_gscrm/Currencies/Currency_select" />        
+    
+    <field name="enabled" type="radio" class="btn-group btn-group-yesno" 
+    		label="COM_GSCRM_CAMPAIGNS_ENABLED_LABEL" tooltip="COM_GSCRM_CAMPAIGNS_ENABLED_DESC" >
+			<option value="1">COM_GSCRM_CAMPAIGNS_ENABLED_YES</option>
+			<option value="0">COM_GSCRM_CAMPAIGNS_ENABLED_NO</option>
+		</field>
+    
+    
+    <field name="code" type="hidden" emptylabel="1"/>
+<!--     <field name="access" type="AccessLevel" label="COM_GSCRM_CAMPAIGNS_ACCESS_LABEL" description="COM_GSCRM_CAMPAIGNS_ACCESS_DESC"/> -->
+
+  </fieldset> 
+ 
+   <fieldset name="navigator" class="col-md-6" label="COM_GSCRM_CAMPAIGNS_GROUP_NAVIGATE" description="COM_GSCRM_CAMPAIGNS_NAV_TIPS">
+	  <field name="listed" type="ViewTemplate" emptylabel="1"	source="site:com_gscrm/Campaigns/Nav_listed" />
+  </fieldset>
+   
+  <fieldset name="selector" class="col-md-12 gs_border" label="COM_GSCRM_CAMPAIGNS_SELECTOR">
+	  <field name="instruction" type="Spacer" emptylabel="1" description="COM_GSCRM_CAMPAIGNS_INSTRUCTIONS" />
+	  <field name="selected" type="ViewTemplate" emptylabel="1"	source="site:com_gscrm/Campaigns/Nav_select" />
+	  
+  </fieldset>
+  
+  
+</form>

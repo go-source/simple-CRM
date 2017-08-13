@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS `#__gscrm_codes` ;
+DROP TABLE IF EXISTS `#__gscrm_beads` ;
+DROP TABLE IF EXISTS `#__gscrm_roles` ;
+DROP TABLE IF EXISTS `#__gscrm_notes` ;
+DROP TABLE IF EXISTS `#__gscrm_accounts` ;
+DROP TABLE IF EXISTS `#__gscrm_relations` ;
+DROP TABLE IF EXISTS `#__gscrm_addresses` ;
+DROP TABLE IF EXISTS `#__gscrm_emails` ;
+DROP TABLE IF EXISTS `#__gscrm_territories` ;
+DROP TABLE IF EXISTS `#__gscrm_campaigns` ;
+DROP TABLE IF EXISTS `#__gscrm_contracts` ;
+DROP TABLE IF EXISTS `#__gscrm_currencies` ;
+DROP TABLE IF EXISTS `#__gscrm_orders` ;
+DROP TABLE IF EXISTS `#__gscrm_opportunities`;
+DROP TABLE IF EXISTS `#__gscrm_invoices`;

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form type="browse" 
+	show_header="1" 
+		show_filters="1" 
+			show_pagination="1" 
+				norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+					lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/customF0F.css">	
+  <headerset>
+
+    <header name="company" type="Searchable" label="COM_GSCRM_ACCOUNTS_COMPANY_LABEL" sortable="true"/>
+    <header name="title" type="Searchable" label="COM_GSCRM_ACCOUNTS_LIST_TITLE" />
+    <header name="type" type="Field" label="COM_GSCRM_ACCOUNTS_TYPE_LABEL" sortable="true"/>    
+    <header name="territory" label="COM_GSCRM_ACCOUNTS_TERRITORY_LABEL" sortable="true"/>
+    <header name="campaign" label="COM_GSCRM_ACCOUNTS_CAMPAIGN_LABEL" sortable="true"/>
+    <header name="email" label="COM_GSCRM_ACCOUNTS_EMAIL_LABEL" sortable="true"/>
+    <header name="phone1" label="COM_GSCRM_ACCOUNTS_PHONE1_LABEL" sortable="true"/>
+    <header name="phone2" label="COM_GSCRM_ACCOUNTS_PHONE2_LABEL" sortable="true"/>
+<!--     <header name="phone3" label="COM_GSCRM_ACCOUNTS_PHONE3_LABEL" sortable="true"/> -->
+<!--     <header name="phone4" label="COM_GSCRM_ACCOUNTS_PHONE4_LABEL" sortable="true"/> -->
+    <header name="owner" type="Searchable" label="COM_GSCRM_ACCOUNTS_OWNER_LABEL" sortable="true"/>
+
+<!--     <header name="ordering" type="Ordering" label="COM_GSCRM_ACCOUNTS_ORDERING_LABEL" sortable="true" tdwidth="1%"/> -->
+<!--     <header name="gscrm_account_id" type="RowSelect" label="COM_GSCRM_ACCOUNTS_GSCRM_ACCOUNT_ID_LABEL" sortable="true" tdwidth="2%"/> -->    
+<!--     <header name="notes" type="Searchable" label="COM_GSCRM_ACCOUNTS_NOTES_LABEL" sortable="true"/> -->
+<!--     <header name="has_relation" type="Field" label="COM_GSCRM_ACCOUNTS_HAS_RELATION_LABEL" sortable="true"/> -->
+<!--     <header name="gender" type="Field" label="COM_GSCRM_ACCOUNTS_GENDER_LABEL" sortable="true"/> -->
+<!--     <header name="birthdate" type="Date" label="COM_GSCRM_ACCOUNTS_BIRTHDATE_LABEL" sortable="true"/> -->    
+<!--     <header name="address" label="COM_GSCRM_ACCOUNTS_ADDRESS_LABEL" sortable="true"/> -->    
+<!--     <header name="code" type="Searchable" label="COM_GSCRM_ACCOUNTS_CODE_LABEL" sortable="true"/> -->    
+<!--     <header name="enabled" type="Published" label="COM_GSCRM_ACCOUNTS_ENABLED_LABEL" sortable="true"/> -->
+<!--     <header name="access" type="AccessLevel" label="COM_GSCRM_ACCOUNTS_ACCESS_LABEL" sortable="true"/> -->
+  </headerset>
+  <fieldset name="items" >
+
+    <field name="company"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+			>
+		    <state key="code">[ITEM:CODE]</state>					
+		</field> 
+		
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Account&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    <field name="type" type="GenericList"> 
+	<option value="0">GS_PEE</option>
+	<option value="1">GS_BZZ</option>
+	</field>    
+	   
+    <field name="territory"
+	   		type="Model"
+		    model="Territories"
+		    key_field="gscrm_territory_id"
+		    value_field="title"
+			>
+		    <state key="code">[ITEM:CODE]</state>					
+		</field>      
+
+    <field name="campaign"
+	   		type="Model"
+		    model="Campaigns"
+		    key_field="gscrm_campaign_id"
+		    value_field="title"    
+			>
+		    <state key="code">[ITEM:CODE]</state>					
+		</field>   
+    
+    <field name="email" type="Text" url="Mailto:[ITEM:EMAIL]"/>
+
+    <field name="phone1" type="Text"/>
+    <field name="phone2" type="Text"/>
+<!--     <field name="phone3" type="Text"/> -->
+<!--     <field name="phone4" type="Text"/> -->
+
+    <field name="owner"
+	   		type="Model"
+		    model="Beads"
+		    key_field="gscrm_bead_id"
+		    value_field="user_name"
+			>
+		    <state key="code">[ITEM:CODE]</state>					
+		</field>  
+
+<!--     <field name="ordering" type="Ordering" class="input-mini input-sm"/> -->
+<!--     <field name="gscrm_account_id" type="SelectRow"/> -->
+<!--     <field name="notes" type="Text"/> -->
+<!--     <field name="has_relation" type="Checkbox"/> -->
+<!--     <field name="gender" type="Checkbox"/> -->
+<!--     <field name="birthdate" type="Calendar"/> -->		
+<!--     <field name="address" type="Numeric"/> -->		
+<!--     <field name="code" type="Numeric"/> -->		  
+<!--     <field name="enabled" type="Actions"/> -->
+<!--     <field name="access" type="AccessLevel"/> -->
+  </fieldset>
+</form>

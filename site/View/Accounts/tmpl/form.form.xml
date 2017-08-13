@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	type="edit" 
+		validate="true"
+				lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/bootstrap.css"
+					>
+	
+             <!-- 	optional: name label="GS_NAV"  instead of emptylabel -->
+  <fieldset name="navigation" emptylabel="1" class="" >
+	  <field name="navigation" type="ViewTemplate" emptylabel="1"	source="site:com_gscrm/Accounts/Nav_account" />
+  </fieldset>  	
+	
+  <fieldset name="information" class="col-md-6 mt1" label="COM_GSCRM_ACCOUNTS_GROUP_BASIC">
+	  
+    <field name="title" type="Text" class="high28" label="COM_GSCRM_ACCOUNTS_TITLE_LABEL" tooltip="COM_GSCRM_ACCOUNTS_TITLE_DESC" required="true"/>
+    <field name="unique_id" type="Text" class="high28" label="COM_GSCRM_ACCOUNTS_UNIQUE_ID_LABEL" tooltip="COM_GSCRM_ACCOUNTS_UNIQUE_ID_DESC"/>    
+    <field name="notes" type="Textarea" label="COM_GSCRM_ACCOUNTS_NOTES_LABEL" tooltip="COM_GSCRM_ACCOUNTS_NOTES_DESC"/> 
+
+	<field name="type" type="radio" class="btn-group btn-group-yesno" label="COM_GSCRM_ACCOUNTS_TYPE_LABEL" tooltip="COM_GSCRM_ACCOUNTS_TYPE_DESC" >
+	<option value="2">GS_PE</option>
+	<option value="1">GS_BZ</option>
+	</field>
+	
+	<field name="gender" type="radio" label="COM_GSCRM_ACCOUNTS_GENDER_LABEL" tooltip="COM_GSCRM_ACCOUNTS_HAS_RELATION_DESC" class="btn-group btn-group-yesno" >
+	<option value="1">GS_MA</option>
+	<option value="2">GS_FE</option>
+	<option value="0">GS_NOT_SET</option>	
+	</field>	
+		    
+    <field name="birthdate" type="Calendar" class="high28" label="COM_GSCRM_ACCOUNTS_BIRTHDATE_LABEL" tooltip="COM_GSCRM_ACCOUNTS_BIRTHDATE_DESC"/>
+
+	<field name="territory" label="COM_GSCRM_ACCOUNTS_TERRITORY_LABEL" tooltip="COM_GSCRM_ACCOUNTS_TERRITORY_DESC"
+	   		type="Model"
+		    model="Territories"
+		    key_field="gscrm_territory_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:code]</state>
+		    <state key="enabled">1</state>
+		</field>      
+    
+	<field name="campaign" label="COM_GSCRM_ACCOUNTS_CAMPAIGN_LABEL" tooltip="COM_GSCRM_ACCOUNTS_CAMPAIGN_DESC"
+	   		type="Model"
+		    model="Campaigns"
+		    key_field="gscrm_campaign_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:code]</state>
+		    <state key="enabled">1</state>
+		</field> 
+		
+    <field name="enabled" default="1" type="Hidden"  emptylabel="1" />
+    <field name="access"  default="2" type="Hidden"  emptylabel="1"/>  
+    
+	<field name="has_relation" label="COM_GSCRM_ACCOUNTS_HAS_RELATION_LABEL" tooltip="COM_GSCRM_ACCOUNTS_HAS_RELATION_DESC"
+    						type="ViewTemplate" source="site:com_gscrm/Accounts/Relations" />
+  </fieldset>
+
+  <fieldset name="fieldset2" class="col-md-6 mt1" label="COM_GSCRM_ACCOUNTS_FIELDSET2" >
+	  
+    <field name="company" label="COM_GSCRM_ACCOUNTS_COMPANY_LABEL" tooltip="COM_GSCRM_ACCOUNTS_COMPANY_DESC"	
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_NA"
+			>
+		    <state key="type">1</state>			
+		    <state key="code">[ITEM:code]</state>
+		</field> 								   
+    
+    <field name="phone1" type="Text" class="high28"  label="COM_GSCRM_ACCOUNTS_PHONE1_LABEL" tooltip="COM_GSCRM_ACCOUNTS_PHONE1_DESC"/>
+    <field name="phone2" type="Text" class="high28"  label="COM_GSCRM_ACCOUNTS_PHONE2_LABEL" tooltip="COM_GSCRM_ACCOUNTS_PHONE2_DESC"/>
+    <field name="phone3" type="Text" class="high28" label="COM_GSCRM_ACCOUNTS_PHONE3_LABEL" tooltip="COM_GSCRM_ACCOUNTS_PHONE3_DESC"/>
+    <field name="phone4" type="Text" class="high28" label="COM_GSCRM_ACCOUNTS_PHONE4_LABEL" tooltip="COM_GSCRM_ACCOUNTS_PHONE4_DESC"/>
+    					
+    <field name="email" type="Text" class="high28" label="COM_GSCRM_ACCOUNTS_EMAIL_LABEL" tooltip="COM_GSCRM_ACCOUNTS_EMAIL_DESC"/>
+        
+    <field name="show_email" label="COM_GSCRM_ACCOUNTS_EMAIL_SHOW" tooltip="COM_GSCRM_ACCOUNTS_EMAIL_SHOW_DESC" 
+    						type="ViewTemplate" source="site:com_gscrm/Accounts/Email" />  
+					
+    <field name="address" label="COM_GSCRM_ACCOUNTS_ADDRESS_LABEL" tooltip="COM_GSCRM_ACCOUNTS_ADDRESS_DESC"
+    						type="ViewTemplate" source="site:com_gscrm/Accounts/Address_modal"/>
+    												
+	<field name="owner" label="COM_GSCRM_ACCOUNTS_OWNER_LABEL" tooltip="COM_GSCRM_ACCOUNTS_OWNER_DESC" 
+	   		type="Model"
+		    model="Beads"
+		    key_field="gscrm_bead_id"
+		    value_field="user_name"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:code]</state>
+		</field> 				    
+				         
+    <field name="code" value="[ITEM:code]" type="text" class="high28" readonly="true" label="COM_GSCRM_ACCOUNTS_CODE_LABEL" tooltip="COM_GSCRM_ACCOUNTS_CODE_DESC"/>     												
+  </fieldset>  
+  
+</form>

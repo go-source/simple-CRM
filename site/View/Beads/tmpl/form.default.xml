@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form type="browse" show_header="1" show_filters="1" show_pagination="1" norows_placeholder="COM_GSCRM_COMMON_NORECORDS">
+  <headerset>
+    <header name="gscrm_bead_id" type="RowSelect" label="COM_GSCRM_BEADS_GSCRM_BEAD_ID_LABEL" sortable="true" tdwidth="20"/>
+    <header name="user_name" type="Searchable" label="COM_GSCRM_BEADS_TITLE_LABEL"/>
+    <header name="user_id" type="Searchable" label="COM_GSCRM_BEADS_USER_ID_LABEL" sortable="true"/>
+    <header name="quota" type="Searchable" label="COM_GSCRM_BEADS_QUOTA_LABEL" sortable="true"/>
+    <header name="sdate" type="Date" label="COM_GSCRM_BEADS_SDATE_LABEL" sortable="true"/>
+    <header name="edate" type="Date" label="COM_GSCRM_BEADS_EDATE_LABEL" sortable="true"/>
+    <header name="currency" type="Searchable" label="COM_GSCRM_BEADS_CURRENCY_LABEL" sortable="true"/>
+    <header name="role" type="Searchable" label="COM_GSCRM_BEADS_ROLE_LABEL" sortable="true"/>
+    <header name="code" type="Searchable" label="COM_GSCRM_BEADS_CODE_LABEL" sortable="true"/>
+    <header name="enabled" type="Published" label="COM_GSCRM_BEADS_ENABLED_LABEL" sortable="true"/>
+    <header name="access" type="AccessLevel" label="COM_GSCRM_BEADS_ACCESS_LABEL" sortable="true"/>
+  </headerset>
+  <fieldset name="items">
+    <field name="gscrm_bead_id" type="SelectRow"/>
+    <field name="user_name" type="Sortable" url="index.php?option=com_gscrm&amp;view=Bead&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    <field name="user_id" type="User"/>
+    <field name="quota" type="Numeric"/>
+    <field name="sdate" type="Calendar"/>
+    <field name="edate" type="Calendar"/>
+    <field name="currency" type="Numeric"/>
+    <field name="role" type="Numeric"/>
+    <field name="code" type="Numeric"/>
+    <field name="enabled" type="Actions"/>
+    <field name="access" type="AccessLevel"/>
+  </fieldset>
+</form>

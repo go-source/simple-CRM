@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	validate="true"
+		lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/adminF0F.css"
+					>
+  <fieldset name="scaffolding"  class="table45" label="COM_GSCRM_CODES_GROUP_BASIC">
+    
+    <field name="user_id" type="User" label="COM_GSCRM_CODES_USER_ID_LABEL" description="COM_GSCRM_CODES_USER_ID_DESC" required="true"/>	  
+    <field name="title" type="Text" label="COM_GSCRM_CODES_TITLE_LABEL" description="COM_GSCRM_CODES_TITLE_DESC" required="true"/>
+    
+    <field name="type" type="GenericList" default="0" label="COM_GSCRM_CODES_TYPE_LABEL" description="COM_GSCRM_CODES_TYPE_DESC"> 
+	<option value="0">GS_FREE</option>
+	<option value="1">GS_PAID</option>
+	</field> 
+
+    <field name="enabled" type="Published" label="COM_GSCRM_CODES_ENABLED_LABEL" description="COM_GSCRM_CODES_ENABLED_DESC"/>
+    <field name="access" type="AccessLevel" label="COM_GSCRM_CODES_ACCESS_LABEL" description="COM_GSCRM_CODES_ACCESS_DESC"/>	
+	
+  </fieldset > 
+  
+  <fieldset name="fieldset2" class="table45 mt3" emptylabel="true" >
+	  	
+    <field name="timezone" type="Timezone" label="GS_TIMEZONE" class="w80"/>
+ 
+     <field name="date_format" type="Genericlist" label="GS_DATEFORMAT" class="w80">
+	 			<option value="y-m-d">GS_D_YMD</option>
+	 			<option value="Y-m-d">GS_D_YYMD</option>  
+	 			<option value="D F d Y">GS_D_DMDY</option>
+	 			<option value="d-m-y">GS_D_DMY</option>
+	 			<option value="d-m-yy">GS_D_DMYY</option>
+	 			<option value="D d F Y">GS_D_DDMY</option>
+	</field>
+
+    <field name="hour_format" type="Genericlist" label="GS_HOURFORMAT" class="w80">
+			<option value="H:i:s">GS_H_HMS24</option>
+			<option value="h:i:s">GS_H_HMS12</option>
+			<option value="h:i:s A">GS_H_HMSA</option>	
+	</field>	
+    
+    <field name="pref_addr" type="Genericlist" label="GS_PREFADDRESS" class="w80">
+	<option value="0">GS_NUMBER_FIRST</option>
+	<option value="1">GS_STREET_FIRST</option>
+	</field>
+	
+    <field name="hide_note" type="Genericlist" label="GS_HIDENOTE" class="w80">
+	<option value="0">GS_SHOW</option>
+	<option value="1">GS_HIDE</option>	
+	</field> 	   	
+
+  </fieldset>
+</form>

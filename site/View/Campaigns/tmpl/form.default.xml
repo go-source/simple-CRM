@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	type="browse" 
+		show_header="1" 
+			show_filters="1" 
+				show_pagination="1" 
+					norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+						lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/customF0F.css">
+
+
+  <headerset>
+    <header name="ordering" type="Ordering" label="COM_GSCRM_CAMPAIGNS_ORDERING_LABEL" sortable="true" tdwidth="1%"/>
+    <header name="gscrm_campaign_id" type="Searchable" label="COM_GSCRM_CAMPAIGNS_GSCRM_CAMPAIGN_ID_LABEL" sortable="true"/>
+    <header name="title" type="Searchable" label="COM_GSCRM_CAMPAIGNS_TITLE_LABEL"/>
+    <header name="currency" label="COM_GSCRM_CONTRACTS_CURRENCY_LIST" sortable="true" width="2%"/>    
+    <header name="target" label="COM_GSCRM_CAMPAIGNS_TARGET_LABEL" sortable="true"/>    
+    <header name="enabled" type="Searchable" label="COM_GSCRM_CAMPAIGNS_ENABLED_LABEL" sortable="true"/>
+
+<!--     <header name="code" type="Searchable" label="COM_GSCRM_CAMPAIGNS_CODE_LABEL" sortable="true"/>   -->  
+<!--     <header name="access" type="AccessLevel" label="COM_GSCRM_CAMPAIGNS_ACCESS_LABEL" sortable="true"/> -->
+  </headerset>
+  
+  <fieldset name="items">
+    <field name="ordering" type="Ordering" class="input-mini input-sm"/>
+    <field name="gscrm_campaign_id" type="text"/>
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Campaign&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+    <field name="currency" 
+	   		type="Model"
+		    model="Currencies"
+		    key_field="gscrm_currency_id"
+		    value_field="symbol"
+			>
+			<state key="code">[ITEM:CODE]</state>
+		</field>    
+    <field name="target" type="Currency" />    
+    <field name="enabled" type="Actions"/>
+    
+<!--     <field name="code" type="Numeric"/>    --> 
+<!--     <field name="access" type="AccessLevel"/> -->
+  </fieldset>
+</form>

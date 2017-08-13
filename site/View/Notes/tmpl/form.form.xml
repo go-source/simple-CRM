@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	validate="true"
+				lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/bootstrap.css"
+					>
+             <!-- 	optional: name label="GS_NAV"  instead of emptylabel -->
+  <fieldset name="navigation" emptylabel="1" class="" >
+	  <field name="navigation" type="ViewTemplate" emptylabel="1"	source="site:com_gscrm/Notes/Nav_notes" />
+  </fieldset>						
+						
+						
+  <fieldset name="information" class="col-md-8 mt1" label="COM_GSCRM_NOTES_GROUP_BASIC">
+
+    <field name="title" type="Text" readonly="true" class="high28 col-md-8" emptylabel="1" tooltip="COM_GSCRM_NOTES_TITLE_DESC"/>
+    	  
+    <field name="content" class="col-md-12 mt2" type="Textarea" emptylabel="1" tooltip="COM_GSCRM_NOTES_DESCRIPTION_DESC"/> 
+    	  
+    <field name="interaction" class="col-md-12 mt2" type="ViewTemplate" emptylabel="1" tooltip="COM_GSCRM_NOTES_INTERACTION_DESC"
+    		source="site:com_gscrm/Notes/Notes_history" />
+     	  
+  </fieldset > 
+  
+  <fieldset name="fieldset2" class="col-md-4 mt1" label="COM_GSCRM_NOTES_FIELDSET2" >
+
+    <field name="type" emptylabel="1" class="high28" labelclass="label_left" label_placement="top" required="true"
+	    		label="COM_GSCRM_NOTES_TYPE_LABEL" tooltip="COM_GSCRM_NOTES_TYPE_DESC"
+				type="GenericList">
+				<option value="">GS_SELECT</option>	
+				<option value="1">GS_COLD_CALL</option>		
+				<option value="2">GS_FOLLOW_UP</option>
+				<option value="3">GS_INQUIRY_PRE_SALES</option>
+				<option value="4">GS_INQUIRY_SUPPORT</option>			
+				<option value="5">GS_INQUIRY_CONTRACT</option>		
+				<option value="6">GS_INQUIRY_ORDER</option>				
+				<option value="7">GS_INQUIRY_INVOICE</option>	
+				<option value="8">GS_INQUIRY_EVENTS</option>		
+				<option value="9">GS_RETURN_GOODS</option>
+				<option value="99">GS_LOG</option>
+    </field>
+
+	<field name="account" class="high28" labelclass="label_left" label_placement="top"
+			label="COM_GSCRM_NOTES_ACCOUNT_LABEL" tooltip="COM_GSCRM_NOTES_ACCOUNT_DESC"
+	   		type="Model"
+		    model="Accounts"
+		    key_field="gscrm_account_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_SELECT"
+			>
+		    <state key="code">[ITEM:CODE]</state>
+		    <state key="type">2</state>
+		</field>      
+    			
+    <field name="new_name_account" emptylabel="1" class="high28" labelclass="label_left" label_placement="top" 
+    		label="COM_GSCRM_NOTES_NEW_ACCOUNT_LABEL" tooltip="COM_GSCRM_NOTES_NEW_ACCOUNT_DESC"
+    		type="ViewTemplate" source="site:com_gscrm/Notes/New_account" />    			
+
+<!--
+    <field name="opportunity" readonly="true" emptylabel="1" class="high28" labelclass="label_left" label_placement="top" label="COM_GSCRM_NOTES_OPPORTUNITY_LABEL"
+	   		type="Model"
+		    model="Opportunities"
+		    key_field="gscrm_opportunity_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_NOT_AVAILABLE"
+			>
+		    <state key="code">[ITEM:ACCOUNT]</state>
+		</field>  
+-->   
+    
+<!--
+    <field name="contract" readonly="true" emptylabel="1" class="high28" labelclass="label_left" label_placement="top" label="COM_GSCRM_NOTES_CONTRACT_LABEL"
+	   		type="Model"
+		    model="Contracts"
+		    key_field="gscrm_contract_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_NOT_AVAILABLE"
+			>
+		</field>   
+-->
+<!--
+    <field name="order_id" readonly="true" emptylabel="1" class="high28" labelclass="label_left" label_placement="top" label="COM_GSCRM_NOTES_ORDER_LABEL"
+	   		type="Model"
+		    model="Orders"
+		    key_field="gscrm_order_id"
+		    value_field="title"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_NOT_AVAILABLE"
+			>
+		</field>  
+-->
+    <field name="owner" emptylabel="1" class="high28" labelclass="label_left" label_placement="top" label="COM_GSCRM_NOTES_OWNER_LABEL"
+	   		type="Model"
+		    model="Beads"
+		    key_field="gscrm_bead_id"
+		    value_field="user_name"
+		    apply_access="true"
+			apply_enabled="true"
+		    none="GS_NOT_AVAILABLE"
+			>
+		    <state key="code">[ITEM:CODE]</state>				
+		</field>  
+    <field name="code" type="Text" value="[ITEM:code]" readonly="true" emptylabel="1" class="high28" labelclass="label_left" label_placement="top" label="COM_GSCRM_NOTES_CODE_LABEL" />    
+<!--     <field name="enabled" type="Published" label="COM_GSCRM_NOTES_ENABLED_LABEL" tooltip="COM_GSCRM_NOTES_ENABLED_DESC"/> -->
+<!--     <field name="access" type="AccessLevel" label="COM_GSCRM_NOTES_ACCESS_LABEL" tooltip="COM_GSCRM_NOTES_ACCESS_DESC"/> -->
+
+  </fieldset>  
+</form>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form type="browse" 
+	show_header="1" 
+		show_filters="1" 
+			show_pagination="1" 
+				norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+					lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/hide_page_head.css" >
+  <headerset>
+    <header name="gscrm_bead_id" type="RowSelect" label="COM_GSCRM_BEADS_GSCRM_BEAD_ID_LABEL" sortable="true" tdwidth="20"/>
+    <header name="user_name" type="Searchable" label="COM_GSCRM_BEADS_TITLE_LABEL"/>
+    <header name="user_id" type="Searchable" label="COM_GSCRM_BEADS_USER_ID_LABEL" sortable="true"/>
+    <header name="quota" label="COM_GSCRM_BEADS_QUOTA_LABEL" sortable="true"/>
+    <header name="sdate" label="COM_GSCRM_BEADS_SDATE_LABEL" sortable="true"/>
+    <header name="edate" label="COM_GSCRM_BEADS_EDATE_LABEL" sortable="true"/>
+    <header name="currency" label="COM_GSCRM_BEADS_CURRENCY_LABEL" sortable="true"/>
+    <header name="role" label="COM_GSCRM_BEADS_ROLE_LABEL" sortable="true"/>
+    <header name="code" id="code" type="Searchable" label="COM_GSCRM_BEADS_CODE_LABEL" sortable="true"/>
+    <header name="enabled" type="Published" label="COM_GSCRM_BEADS_ENABLED_LABEL" sortable="true"/>
+    <header name="access" type="AccessLevel" label="COM_GSCRM_BEADS_ACCESS_LABEL" sortable="true"/>
+  </headerset>
+  <fieldset name="items">
+    <field name="gscrm_bead_id" type="SelectRow"/>
+    <field name="user_name" type="Sortable" url="index.php?option=com_gscrm&amp;view=Bead&amp;id=[ITEM:ID]&amp;[TOKEN]=1"/>
+    <field name="user_id" type="User"
+    					show_email="false"
+    					show_id="false"
+    					show_username="false"
+    					avatar_size="30"
+    					/>
+    <field name="quota" type="Numeric"/>
+    <field name="sdate" type="Calendar"/>
+    <field name="edate" type="Calendar"/>
+    <field name="currency" type="Numeric"/>
+    <field name="role"
+	   		type="Model"
+		    model="Roles"
+		    key_field="gscrm_role_id"
+		    value_field="title"
+			>
+		</field> 
+	<field name="code" type="ViewTemplate" emptylabel="1" 
+						source="admin:com_gscrm/Beads/Code_name" 
+	/>        
+    <field name="enabled" type="Actions"/>
+    <field name="access" type="AccessLevel"/>
+  </fieldset>
+</form>

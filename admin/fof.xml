@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fof>	
+	<common>
+    <!-- Common settings -->
+        <!-- Container configuration -->
+        <container>
+            <option name="componentNamespace">Gs\Gscrm</option>
+            <option name="factoryClass">FOF30\Factory\MagicFactory</option>
+			<option name="scaffolding">0</option>   
+			<option name="saveScaffolding">0</option> 			                   
+        </container>      
+        
+	</common>
+
+    <backend>
+	        <!-- Dispatcher configuration -->
+	    <dispatcher>
+	            <option name="defaultView">Beads</option>
+	        </dispatcher>	    
+	    
+	    <config>
+                <option name="behaviors">Filters, Access</option>
+        	</config>
+        	
+			<!-- Toolbar configuration not needed for this component; using default Joomla toolbar-->
+            
+    </backend>    
+    
+    <frontend> 
+	        <!-- Dispatcher configuration -->
+	    <dispatcher>
+		    		<option name="defaultView">Notes</option>
+		    			
+		            <option name="Beads">Beads</option>
+		            <option name="Roles">Roles</option>
+		            <option name="Notes">Notes</option>		            
+		            <option name="Accounts">Accounts</option>		            		            		            		            
+		            <option name="Territories">Territories</option>
+		            <option name="Campaigns">Campaigns</option>
+		            <option name="Opportunities">Opportunities</option>	
+		            <option name="Orders">Orders</option>	            
+<!--
+		            <option name="Contracts">Contracts</option>	            
+		            <option name="Invoices">Invoices</option>
+-->		              		            		        	            
+		        </dispatcher> 
+
+		<view name="*">
+            <acl>
+                <task name="add" />
+                <task name="save" /> 
+                <task name="savenew" />                               
+                <task name="edit" />              
+                <task name="browse"/>
+                <task name="cancel"/> 
+                <task name="unpublish"/> 
+                <task name="publish"/>
+                <task name="remove"/>                                  
+            </acl>
+		</view>
+			                   
+	    <model name="*"> <behaviors>Filters</behaviors>  </model>
+				                               
+    </frontend>
+	
+</fof>

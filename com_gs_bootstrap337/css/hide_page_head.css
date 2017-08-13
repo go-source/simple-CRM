@@ -1,0 +1,16 @@
+/*!
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	
+* Complementary CSS for F0F3 forms by go-source.com
+*
+* If we load Bootstrapp with F0F, buttons and input fields get altered
+*
+* This file adds just a few css used under back end forms
+*
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+/*hide ordeging dropdown from header without changing F0F code */
+.chzn-container-single .chzn-single {
+	position: absolute !important;
+	display: none !important;
+}

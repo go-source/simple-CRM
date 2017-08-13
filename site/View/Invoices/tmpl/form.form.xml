@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form validate="true">
+  <fieldset name="scaffolding" label="COM_GSCRM_INVOICES_GROUP_BASIC">
+    <field name="title" type="Text" label="COM_GSCRM_INVOICES_TITLE_LABEL" description="COM_GSCRM_INVOICES_TITLE_DESC"/>
+    <field name="notes" type="Text" label="COM_GSCRM_INVOICES_NOTES_LABEL" description="COM_GSCRM_INVOICES_NOTES_DESC"/>
+    <field name="stage" type="Checkbox" label="COM_GSCRM_INVOICES_STAGE_LABEL" description="COM_GSCRM_INVOICES_STAGE_DESC"/>
+    <field name="value" type="Numeric" label="COM_GSCRM_INVOICES_VALUE_LABEL" description="COM_GSCRM_INVOICES_VALUE_DESC"/>
+    <field name="owner" type="Numeric" label="COM_GSCRM_INVOICES_OWNER_LABEL" description="COM_GSCRM_INVOICES_OWNER_DESC"/>
+    <field name="account" type="Numeric" label="COM_GSCRM_INVOICES_ACCOUNT_LABEL" description="COM_GSCRM_INVOICES_ACCOUNT_DESC"/>
+    <field name="contact" type="Numeric" label="COM_GSCRM_INVOICES_CONTACT_LABEL" description="COM_GSCRM_INVOICES_CONTACT_DESC"/>
+    <field name="code" type="Numeric" label="COM_GSCRM_INVOICES_CODE_LABEL" description="COM_GSCRM_INVOICES_CODE_DESC"/>
+    <field name="enabled" type="Published" label="COM_GSCRM_INVOICES_ENABLED_LABEL" description="COM_GSCRM_INVOICES_ENABLED_DESC"/>
+    <field name="access" type="AccessLevel" label="COM_GSCRM_INVOICES_ACCESS_LABEL" description="COM_GSCRM_INVOICES_ACCESS_DESC"/>
+  </fieldset>
+</form>

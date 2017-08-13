@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form 
+	type="browse" 
+		show_header="1" 
+			show_filters="1" 
+				show_pagination="1" 
+					norows_placeholder="COM_GSCRM_COMMON_NORECORDS"
+						lessfiles="media://com_gs_bootstrap337/css/gs.less||media://com_gs_bootstrap337/css/customF0F.css">
+  <headerset>
+    <header name="ordering" type="Ordering" label="COM_GSCRM_TERRITORIES_ORDERING_LABEL" sortable="true" tdwidth="1%"/>
+    <header name="gscrm_territory_id" type="Searchable" label="COM_GSCRM_TERRITORIES_GSCRM_TERRITORY_ID_LABEL" sortable="true"/>
+    <header name="title" type="Searchable" label="COM_GSCRM_TERRITORIES_TITLE_LABEL" tdwidth="40%"/>
+    <header name="enabled" type="Searchable" label="COM_GSCRM_TERRITORIES_ENABLED_LABEL" sortable="true"/>
+    
+<!--     <header name="code" label="COM_GSCRM_TERRITORIES_CODE_LABEL" sortable="true"/> -->
+<!--     <header name="access" type="AccessLevel" label="COM_GSCRM_TERRITORIES_ACCESS_LABEL" sortable="true"/> -->
+  </headerset>
+  <fieldset name="items">
+    <field name="ordering" type="Ordering" class="input-mini input-sm"/>
+    <field name="gscrm_territory_id" type="SelectRow"/>
+    <field name="title" type="Sortable" url="index.php?option=com_gscrm&amp;view=Territory&amp;id=[ITEM:ID]&amp;Itemid=[ITEMID]&amp;[TOKEN]=1"/>
+
+    <field name="enabled" type="Actions"/>
+    
+<!--     <field name="code" type="hidden"/>  -->   
+<!--     <field name="access" type="AccessLevel"/> -->
+  </fieldset>
+</form>
