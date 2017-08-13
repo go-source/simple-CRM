@@ -9,7 +9,6 @@ Features (v.1.1.0):
 
 Leads are considered the first stage of opportunities while orders are created when opportunities are closed won. The sales stage is set by users using the opportunities form.
 
-Relations include business (works for, assistant of or belongs to groups) and individual family relationships (parents, children, etc). The family relationships is usefull for non-profit fund raising and associations.
 
 Installation:
 Simple CRM requires FOF3 https://github.com/akeeba/fof, included in the installation package. The component installs like any Joomla component.
