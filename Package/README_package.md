@@ -1,6 +1,6 @@
 # Instructions
 
-Package requires both component zipped files and FOF3x zipped, plus the packacge xml and installation script.
+Package requires both component zipped files and FOF3x zipped, plus the package xml and installation script.
 
 ## Prepare the component
 
@@ -14,7 +14,7 @@ Simple CRM requires FOF3 https://github.com/akeeba/fof, that needs to be include
 
 Download the production-stable version of FOF from https://www.akeebabackup.com/download.html
 
-Zip or rename to lib_fof30.zip (because this is the name used in the packacge install script).
+Zip or rename to lib_fof30.zip (because this is the name used in the package install script).
 
 Add these files to and zip all together:
 - com_gscrm.zip
@@ -22,7 +22,3 @@ Add these files to and zip all together:
 - LICENSE.txt
 - pkg_gscrm.xml
 - script.gscrm.php
-
-
-
-
