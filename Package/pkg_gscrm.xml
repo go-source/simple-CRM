@@ -5,10 +5,10 @@
     <author>Pedro L B Maschio</author>
     <creationDate>2017-07-28</creationDate>
     <packagename>gscrm</packagename>
-    <version>1.1.0</version>
+    <version>1.0.0</version>
     <url>https://go-sorce.com</url>
     <packager>go-source</packager>
-    <packagerurl>https://go-sorce.co</packagerurl>
+    <packagerurl>https://go-sorce.com</packagerurl>
     <copyright>Copyright (c)2017 Pedro L B Maschio</copyright>
     <license>GNU GPL v3 or later</license>
     <description>Simple CRM installation package</description>
