@@ -25,7 +25,7 @@ class Com_GsInstallerScript extends \FOF30\Utils\InstallScript
 	 *
 	 * @var   string
 	 */
-	protected $componentName = 'gscrm';
+	protected $componentName = 'com_gscrm';
 
 	/**
 	 * The title of the component (printed on installation and uninstallation messages)
