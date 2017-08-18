@@ -1,7 +1,7 @@
 # simple-CRM
 Contact Management Joomla component designed to be easy to use. 
 
-## Features (v.1.1.0):
+## Features (v.1.0.0):
 - Accounts: create/edit/delete business or person accounts, and relations can be set.
 - Notes: annotation of conversations with accounts
 - Opportunities: classifications of the conversations to close a deal
