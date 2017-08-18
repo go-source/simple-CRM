@@ -85,7 +85,7 @@
 	<scriptfile>script.com_gscrm.php</scriptfile>   
 	
 	<updateservers>
-    	<server type="extension" priority="2" name="gsCRM Updates">https://update.go-source.com/gscrm.xml</server>
+    	<server type="extension" priority="2" name="Simple CRM Updates">https://update.go-source.com/gscrm_updates.xml</server>
  	</updateservers>    	
 
 </extension>

@@ -24,9 +24,7 @@
 
     <!-- Update servers -->
     <updateservers>
-        <server type="extension" priority="1" name="Simple CRM">
-	        http://go-source.com/crmpackageupdate.xml
-	    </server>
+        <server type="extension" priority="2" name="Simple CRM Updates">https://update.go-source.com/gscrm_updates.xml</server>
     </updateservers>
 
 </extension>
