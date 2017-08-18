@@ -7,7 +7,7 @@
     <author>Pedro L B Maschio</author>
     <authorEmail>bicudomaschio@gmail.com</authorEmail>
     <authorUrl>http://go-source.com/</authorUrl>
-    <version>1.1.0</version>
+    <version>1.0.0</version>
     <description>Simple CRM Contact Management</description>
     
 <!-- Runs on install -->
@@ -82,7 +82,11 @@
     </administration>
     
 	<!-- Installation / uninstallation PHP scripts -->      
-	<scriptfile>script.com_gscrm.php</scriptfile>       	
+	<scriptfile>script.com_gscrm.php</scriptfile>   
+	
+	<updateservers>
+    	<server type="extension" priority="2" name="gsCRM Updates">https://update.go-source.com/gscrm.xml</server>
+ 	</updateservers>    	
 
 </extension>
 
