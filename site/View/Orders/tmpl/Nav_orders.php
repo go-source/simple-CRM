@@ -125,10 +125,11 @@ if($next_item < 1){$next_item = $item_id;}
 			title="<?php echo ' '.JText::_('COM_GSCRM_ORDERS_CREATE') ?>" >
 			<i class="glyphicon glyphicon-shopping-cart"></i><?php echo ' '.JText::_('COM_GSCRM_ORDER_NEW') ?></a>	
 		
+<!--	
 		<a class="btn-xs" href="index.php?option=com_gscrm&view=Invoice&account=<?php echo $account ?>&Order=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['invoice'] ?>&<?php echo JSession::getFormToken() ?>=1" 
 			title="<?php echo ' '.JText::_('COM_GSCRM_INVOICES_CREATE') ?>" >
 			<i class="glyphicon glyphicon-usd"></i><?php echo ' '.JText::_('COM_GSCRM_INVOICE_NEW') ?></a>				
-
+-->
 </div>
 <div class="col-sm-12 mt2">
 	
