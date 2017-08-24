@@ -178,6 +178,33 @@ CREATE TABLE IF NOT EXISTS `#__gscrm_campaigns` (
   `access` int(10) NOT NULL DEFAULT '2',  
   PRIMARY KEY (`gscrm_campaign_id`)  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `#__gscrm_contracts` (
+  `gscrm_contract_id` int(11) unsigned NOT NULL auto_increment,
+  `title` varchar(144) NOT NULL COMMENT 'title',
+  `number` int(11) NOT NULL COMMENT 'contract number', 
+  `type` tinyint(1) NOT NULL DEFAULT '2' COMMENT '1=business 2=person',   
+  `notes` text COMMENT 'account notes',
+  `cv` float( 11, 2 ) NOT NULL DEFAULT '0' COMMENT 'contract value',
+  `currency` int(11) NOT NULL NOT NULL DEFAULT '0' COMMENT 'currency from list',      
+  `sdate` date NOT NULL DEFAULT '0000-00-00' COMMENT 'Start date',
+  `edate` date NOT NULL DEFAULT '0000-00-00' COMMENT 'End date',
+  `owner` int(11) NOT NULL DEFAULT '0' COMMENT 'contract owner',  
+  `account` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,  
+  `invoice` int(11) NOT NULL DEFAULT '0',    
+  `note` int(11) NOT NULL DEFAULT '0' COMMENT 'contact that originated deal',
+  `params` text COLLATE utf8mb4_unicode_ci COMMENT '1st creation',      
+  `code` int(11) NOT NULL COMMENT 'group control access',  
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `ordering` int(11) NOT NULL DEFAULT '0',  
+  `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '0=date expired',
+  `access` int(10) NOT NULL DEFAULT '2',  
+  PRIMARY KEY (`gscrm_contract_id`)  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;  
   
 CREATE TABLE IF NOT EXISTS `#__gscrm_currencies` (
   `gscrm_currency_id` int(11) unsigned NOT NULL auto_increment,
@@ -245,3 +272,26 @@ CREATE TABLE IF NOT EXISTS `#__gscrm_orders` (
   PRIMARY KEY (`gscrm_opportunity_id`)  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
   
+ CREATE TABLE IF NOT EXISTS `#__gscrm_invoices` (
+  `gscrm_invoice_id` int(11) unsigned NOT NULL auto_increment,
+  `title` varchar(144) NOT NULL, 
+  `number` int(11) NOT NULL COMMENT 'invoice number', 
+  `type` tinyint(1) NOT NULL DEFAULT '2' COMMENT '1=business 2=person',   
+  `notes` text COMMENT 'invoice text',  
+  `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '1=open 2=paid 3=late',  
+  `value` float( 11, 2 ) NOT NULL DEFAULT '0' COMMENT 'invoice amount',
+  `currency` int(11) NOT NULL NOT NULL DEFAULT '0' COMMENT 'currency from list',  
+  `account` int(11) NOT NULL, 
+  `contract` int(11) NOT NULL DEFAULT '0' COMMENT 'contract invoiced',
+  `order_id` int(11) NOT NULL DEFAULT '0' COMMENT 'order invoiced',
+  `params` text COLLATE utf8mb4_unicode_ci COMMENT '1st creation',    
+  `code` int(11) NOT NULL COMMENT 'group control access',  
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `ordering` int(11) NOT NULL DEFAULT '0',  
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
+  `access` int(10) NOT NULL DEFAULT '2',  
+  PRIMARY KEY (`gscrm_invoice_id`)  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 

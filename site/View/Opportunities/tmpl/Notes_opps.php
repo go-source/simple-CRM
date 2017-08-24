@@ -129,12 +129,10 @@ $notes = Helper::Notes($account, $filter_note);
 					title="<?php echo ' '.JText::_('COM_GSCRM_OPPORTUNITIES_CREATE') ?>"
 						>
 					<i class="glyphicon glyphicon-pushpin"></i></a>	
-<!--
 				<a class="" href="index.php?option=com_gscrm&view=Contract&note=<?php echo $note->gscrm_note_id ?>&account=<?php echo $note->account ?>&Itemid=<?php echo $menu_item['contract'] ?>&<?php echo JSession::getFormToken() ?>=1"
 					title="<?php echo ' '.JText::_('COM_GSCRM_CONTRACTS_CREATE') ?>"
 						>
-					<i class="glyphicon glyphicon-briefcase"></i></a>
--->	
+					<i class="glyphicon glyphicon-briefcase"></i></a>	
 				<a class="" href="index.php?option=com_gscrm&view=Order&note=<?php echo $note->gscrm_note_id ?>&account=<?php echo $note->account ?>&Itemid=<?php echo $menu_item['order'] ?>&<?php echo JSession::getFormToken() ?>=1"
 					title="<?php echo ' '.JText::_('COM_GSCRM_ORDERS_CREATE') ?>"
 						>
