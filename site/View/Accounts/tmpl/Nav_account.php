@@ -79,9 +79,11 @@ $has_notes = Helper::GetColumnArray('title', '#__gscrm_notes', 'account', $item_
 		 title="<?php echo ' '.JText::_('COM_GSCRM_OPPORTUNITIES_CREATE') ?>" >
 		<i class="glyphicon glyphicon-pushpin"></i></a>	
 	
+<!--
 	<a class="btn-xs" href="index.php?option=com_gscrm&view=Contract&account=<?php echo $item_id ?>&type=<?php echo $model->type ?>&Itemid=<?php echo $menu_item['contract'] ?>&<?php echo JSession::getFormToken() ?>=1"
 		 title="<?php echo ' '.JText::_('COM_GSCRM_CONTRACTS_CREATE') ?>" >
 		<i class="glyphicon glyphicon-briefcase"></i></a>	
+-->
 	
 	<a class="btn-xs" href="index.php?option=com_gscrm&view=Order&account=<?php echo $item_id ?>&type=<?php echo $model->type ?>&Itemid=<?php echo $menu_item['order'] ?>&<?php echo JSession::getFormToken() ?>=1"
 		 title="<?php echo ' '.JText::_('COM_GSCRM_ORDERS_CREATE') ?>" >
@@ -95,8 +97,10 @@ $has_notes = Helper::GetColumnArray('title', '#__gscrm_notes', 'account', $item_
 			<ul class="dropdown-menu">
 				<li><a href="index.php?option=com_gscrm&view=Opportunities&account=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['opportunities'] ?>&<?php echo JSession::getFormToken() ?>=1">
 					<?php echo JText::_('GS_SEE_OPPORTUNITIES') ?></a></li>
+<!--
 				<li><a href="index.php?option=com_gscrm&view=Contracts&account=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['contracts'] ?>&<?php echo JSession::getFormToken() ?>=1">
 					<?php echo JText::_('GS_SEE_CONTRACTS') ?></a></li>
+-->
 				<li><a href="index.php?option=com_gscrm&view=Orders&account=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['orders'] ?>&<?php echo JSession::getFormToken() ?>=1">
 					<?php echo JText::_('GS_SEE_ORDERS') ?></a></li>
   			</ul>

@@ -86,8 +86,10 @@ if($next_item < 1){$next_item = $item_id;}
 			<ul class="dropdown-menu">
 				<li><a href="index.php?option=com_gscrm&view=Opportunities&account=<?php echo $account ?>&Itemid=<?php echo $menu_item['opportunities'] ?>&<?php echo JSession::getFormToken() ?>=1">
 					<?php echo JText::_('GS_SEE_OPPORTUNITIES') ?></a></li>
+<!--
 				<li><a href="index.php?option=com_gscrm&view=Contracts&account=<?php echo $account ?>&Itemid=<?php echo $menu_item['contracts'] ?>&<?php echo JSession::getFormToken() ?>=1">
 					<?php echo JText::_('GS_SEE_CONTRACTS') ?></a></li>
+-->
 				<li><a href="index.php?option=com_gscrm&view=Orders&account=<?php echo $account ?>&Itemid=<?php echo $menu_item['orders'] ?>&<?php echo JSession::getFormToken() ?>=1">
 					<?php echo JText::_('GS_SEE_ORDERS') ?></a></li>
   			</ul>
@@ -103,9 +105,11 @@ if($next_item < 1){$next_item = $item_id;}
 			 title="<?php echo ' '.JText::_('GS_TIP_SEE_NOTES') ?>">
 			<i class="glyphicon glyphicon-pencil"></i><?php echo ' '.JText::_('GS_SEE_NOTES') ?></a> 
 					
+<!--
 		<a class="btn-xs" href="index.php?option=com_gscrm&view=Contract&account=<?php echo $account ?>&opportunity=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['contract'] ?>&<?php echo JSession::getFormToken() ?>=1" 
 			title="<?php echo ' '.JText::_('COM_GSCRM_CONTRACTS_CREATE') ?>" >
-			<i class="glyphicon glyphicon-briefcase"></i><?php echo ' '.JText::_('COM_GSCRM_CONTRACT_NEW') ?></a>	
+			<i class="glyphicon glyphicon-briefcase"></i><?php echo ' '.JText::_('COM_GSCRM_CONTRACT_NEW') ?></a>
+-->	
 	
 		<a class="btn-xs" href="index.php?option=com_gscrm&view=Order&account=<?php echo $account ?>&opportunity=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['order'] ?>&<?php echo JSession::getFormToken() ?>=1" 
 			title="<?php echo ' '.JText::_('COM_GSCRM_ORDERS_CREATE') ?>" >
