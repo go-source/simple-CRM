@@ -97,6 +97,7 @@
 		    <state key="code">[ITEM:CODE]</state>				
 		</field> 		
 		
+<!--
     <field name="contract" class="high28" label="COM_GSCRM_ORDERS_CONTRACT_LABEL" tooltip="COM_GSCRM_ORDERS_CONTRACT_DESC"
 	   		type="Model"
 		    model="Contracts"
@@ -108,6 +109,8 @@
 			>
 		    <state key="code">[ITEM:CODE]</state>			
 		</field> 
+-->
+
     <field name="opportunity" class="high28" label="COM_GSCRM_ORDERS_OPPORTUNITY_LABEL" tooltip="COM_GSCRM_ORDERS_OPPORTUNITY_DESC"
 	   		type="Model"
 		    model="Opportunities"
