@@ -99,6 +99,9 @@ $has_notes = Helper::GetColumnArray('title', '#__gscrm_notes', 'account', $item_
 					<?php echo JText::_('GS_SEE_CONTRACTS') ?></a></li>
 				<li><a href="index.php?option=com_gscrm&view=Orders&account=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['orders'] ?>&<?php echo JSession::getFormToken() ?>=1">
 					<?php echo JText::_('GS_SEE_ORDERS') ?></a></li>
+				<li><a href="index.php?option=com_gscrm&view=Notes&account=<?php echo $item_id ?>&Itemid=<?php echo $menu_item['notes'] 
+				?>&<?php echo JSession::getFormToken() ?>=1">
+				<?php echo JText::_('GS_SEE_NOTES') ?></a></li>					
   			</ul>
 	</div>
 		
