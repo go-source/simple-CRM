@@ -25,7 +25,8 @@
 <!-- Public front end files -->
   	    <files folder="site">  
         <filename>index.html</filename>
-        <filename>gscrm.php</filename>  
+        <filename>gscrm.php</filename>
+        <filename>router.php</filename>  
               
         <folder>assets</folder>
         <folder>controllers</folder>            
