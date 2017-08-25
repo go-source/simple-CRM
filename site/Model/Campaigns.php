@@ -226,16 +226,16 @@ class Campaigns extends \FOF30\Model\DataModel
 			$cache = \JFactory::getCache('com_gscrm_campaign', '');
 			
 			//clean list
-			$cache_Key = 'campaign_listed_'.$this->getState('code', null, 'int').'_id_'.$this->getState('gscrm_territory_id', null, 'int');
+			$cache_Key = 'campaign_listed_'.$this->getState('code', null, 'int').'_id_'.$this->getState('gscrm_campaign_id', null, 'int');
 			$cache->remove($cache_Key, 'com_gscrm_campaign');
 			
 			//clean index
-			$cache_Key = 'campaign_index_'.$this->getState('code', null, 'int').'_id_'.$this->getState('gscrm_territory_id', null, 'int');
+			$cache_Key = 'campaign_index_'.$this->getState('code', null, 'int').'_id_'.$this->getState('gscrm_campaign_id', null, 'int');
 			$cache->remove($cache_Key, 'com_gscrm_campaign');
 			
 			//clean accounts
 			$cache = \JFactory::getCache('com_gscrm_accounts', '');
-			$cache_Key = 'account_territory_'.$this->getState('code', null, 'int').'_id_'.$this->getState('gscrm_territory_id', null, 'int');
+			$cache_Key = 'account_campaign_'.$this->getState('code', null, 'int').'_id_'.$this->getState('gscrm_campaign_id', null, 'int');
 			$cache->remove($cache_Key, 'com_gscrm_accounts');
 		}		
 		
