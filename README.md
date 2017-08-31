@@ -11,6 +11,10 @@ Leads are considered the first stage of opportunities while orders are created w
 
 Relations include business (works for, assistant of or belongs to groups) and individual family relationships (parents, children, etc). The family relationships is useful for non-profit fund raising and associations.
 
+## Help needed! Fork right now
+
+Help improve this project. We need UX/designers to build atractive views and easier navigation. Help integrate simple-CRM with other Joomla! components, like capturing contacts and integrating with mail solutions.
+
 ## Installation:
 
 Simple CRM requires FOF3 https://github.com/akeeba/fof, included in the installation package. The component installs like any Joomla component.
